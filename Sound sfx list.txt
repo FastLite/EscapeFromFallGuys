@@ -1,0 +1,11 @@
+- ambient/background music (fall guys synthwave)
+- running sfx
+- jump sfx
+- button press (childish button push like "puck", idk xD)
+- menu music (fall guys fall 'N' roll)
+- trip sfx
+- You bang into a wall sfx (stupid sfx)
+- a sfx for when the tablet falls down making a breaking sound.
+- tablet pickup sound
+- lose sfx
+- win sfx (like in among us or something)
