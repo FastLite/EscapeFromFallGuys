@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Vlad/Scene_Vlad.unity
+    guid: f1f52044d7e0bc445b38bb9cf263bd15
+  - enabled: 1
+    path: Assets/Scenes/Vlad/Scene_Vlad 1.unity
+    guid: 496137fee999f7b488f974c3563e0e4c
+  - enabled: 1
+    path: Assets/Scenes/Vlad/Scene_Vlad 2.unity
+    guid: 419771ec245cdb046a2004e6c2d72863
   m_configObjects: {}
