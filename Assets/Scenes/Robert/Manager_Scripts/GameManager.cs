@@ -52,6 +52,7 @@ public class GameManager : Singleton<GameManager>
         // Activates game over if health reaches 0
         if(tabletHealth <= 0)
         {
+            AudioManager.Instance.PlayAudio("Defeat");
             Time.timeScale = 0;
             loseScreen.SetActive(true);
             Debug.Log("<color=cyan>Game Over!</color>");
@@ -60,6 +61,7 @@ public class GameManager : Singleton<GameManager>
         // Activates win screen after all levels are complete
         if(hasTablet && completedLevels == totalLevels)
         {
+            AudioManager.Instance.PlayAudio("Victory");
             Time.timeScale = 0;
             winScreen.SetActive(true);
             Debug.Log("<color=blue>Congratulations, you win!</color>");
@@ -81,6 +83,7 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 0;
         pauseScreen.SetActive(true);
+        AudioManager.Instance.PlayAudio("ButtonPress");
 
     }
 
@@ -89,5 +92,7 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 1;
         pauseScreen.SetActive(false);
+        AudioManager.Instance.PlayAudio("ButtonPress");
+
     }
 }
