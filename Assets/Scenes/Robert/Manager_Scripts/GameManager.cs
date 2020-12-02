@@ -8,6 +8,11 @@ public class GameManager : Singleton<GameManager>
     public int tabletHealth;
     public bool hasTablet;
     public int completedLevels;
+    public int totalLevels;
+    public float popUpForce;
+
+    public GameObject player;
+    public GameObject tabletPrefab;
 
     public Slider tabletHealthBar;
 
@@ -23,21 +28,28 @@ public class GameManager : Singleton<GameManager>
     
     public void TakeDamage()
     {
-        if (hasTablet)
+        if (hasTablet && tabletHealth > 0)
         {
-            if (tabletHealth > 0)
-            {
-                tabletHealth --;
-                tabletHealthBar.value = tabletHealth;
-                Debug.Log("<color=red>You have taken damage!</color>");
-                GameOver();
-                hasTablet = false;
-            }
+            // Drops the tablet
+            var tablet = GameObject.FindGameObjectWithTag("Tablet");
+            Destroy(tablet);
+            var newTablet = Instantiate(tabletPrefab, player.transform.position, Quaternion.identity);
+            newTablet.GetComponent<Rigidbody>().AddForce(transform.up * popUpForce);
+
+            // Tablet loses health
+            tabletHealth --;
+            tabletHealthBar.value = tabletHealth;
+            Debug.Log("<color=red>You have taken damage!</color>");
+
+            // Checks if game is over
+            GameOver();
+            hasTablet = false;
         }
     }
 
     public void GameOver()
     {
+        // Activates game over if health reaches 0
         if(tabletHealth <= 0)
         {
             Time.timeScale = 0;
@@ -45,7 +57,8 @@ public class GameManager : Singleton<GameManager>
             Debug.Log("<color=cyan>Game Over!</color>");
         }
 
-        if(hasTablet && completedLevels == 3)
+        // Activates win screen after all levels are complete
+        if(hasTablet && completedLevels == totalLevels)
         {
             Time.timeScale = 0;
             winScreen.SetActive(true);
@@ -53,6 +66,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    // Restarts the game
     public void RestartGame()
     {
         Time.timeScale = 1;
@@ -62,12 +76,15 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("<color=green>Game has been reset</color>");
     }
 
+    // Pauses the game
     public void PauseGame()
     {
         Time.timeScale = 0;
         pauseScreen.SetActive(true);
 
     }
+
+    // Resumes gameplay
     public void ResumeGame()
     {
         Time.timeScale = 1;
