@@ -12,7 +12,7 @@ public class ReleaseRocks : MonoBehaviour
         {
             foreach(Transform singleRock in rocks)
             {
-                transform.GetComponent<Rigidbody>().useGravity = true;
+                singleRock.transform.GetComponent<Rigidbody>().useGravity = true;
             }
         }
     }

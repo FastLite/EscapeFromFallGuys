@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class OnPillarCollision : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
             PlayerMovement.instance.animator.SetTrigger("stumble");
-            Destroy(gameObject);
+            TellScriptToDropTablet.instance.DropTheTaptop();
+            transform.GetComponent<CapsuleCollider>().enabled = false;
+            //Destroy(gameObject);
         }
     }
 }

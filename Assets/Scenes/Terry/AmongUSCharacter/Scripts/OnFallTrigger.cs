@@ -9,6 +9,7 @@ public class OnFallTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerMovement.instance.animator.SetTrigger("trip");
+            TellScriptToDropTablet.instance.DropTheTaptop();
             //Destroy(gameObject);
         }
     }

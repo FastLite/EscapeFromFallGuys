@@ -9,6 +9,8 @@ public class OnBarrierJumpTrigger : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             PlayerMovement.instance.animator.SetTrigger("trip");
+            TellScriptToDropTablet.instance.DropTheTaptop();
+            transform.GetComponent<CapsuleCollider>().enabled = false;
             //Destroy(gameObject);
         }
     }

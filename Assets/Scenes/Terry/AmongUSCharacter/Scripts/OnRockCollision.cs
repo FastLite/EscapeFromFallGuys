@@ -9,7 +9,8 @@ public class OnRockCollision : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement.instance.animator.SetTrigger("stumble");
-            Destroy(gameObject);
+            TellScriptToDropTablet.instance.DropTheTaptop();
+            //transform.GetComponent<SphereCollider>().enabled = false;
         }
     }
 }
