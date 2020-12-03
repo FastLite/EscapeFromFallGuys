@@ -17,5 +17,6 @@ public class DropTabletAndAddForce : MonoBehaviour
         //transform.position = postPos;
         //rb.AddForce(transform.forward * 100);
         //transform.GetComponent<BoxCollider>().enabled = true;
+
     }
 }
