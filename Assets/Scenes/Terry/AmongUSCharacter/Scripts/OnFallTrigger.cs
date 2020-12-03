@@ -11,6 +11,8 @@ public class OnFallTrigger : MonoBehaviour
             PlayerMovement.instance.animator.SetTrigger("trip");
             TellScriptToDropTablet.instance.DropTheTablet();
             AudioManager.Instance.StopAudio("Running");
+            AudioManager.Instance.PlayAudio("FallCrash");
+            Invoke("PlayGetBackUp", 1.5f);
             GameManager.Instance.tabletNumber--;
             GameManager.Instance.TakeDamage();
             if (GameManager.Instance.tabletNumber == 0)
@@ -26,5 +28,10 @@ public class OnFallTrigger : MonoBehaviour
     public void WaitForAnimationToEnd()
     {
         PlayerMovement.instance.canMove = true;
+    }
+
+    public void PlayGetBackUp()
+    {
+        AudioManager.Instance.PlayAudio("GetBackUp");
     }
 }

@@ -23,6 +23,8 @@ public class AudioManager : Singleton<AudioManager>
         sounds[7].audioSource.volume = 0.2f;
         sounds[3].audioSource.pitch = 1;
         sounds[3].audioSource.loop = true;
+        sounds[3].audioSource.volume = 0.35f;
+        sounds[2].audioSource.volume = 1;
         PlayAudio("BGM");
     }
 

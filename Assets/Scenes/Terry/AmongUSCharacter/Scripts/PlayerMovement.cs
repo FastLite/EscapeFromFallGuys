@@ -12,8 +12,13 @@ public class PlayerMovement : MonoBehaviour
     private float jumpHeight = 0.4f;
     private float gravityValue = -9.81f;
     public bool canMove = true;
+    public bool rotateAroundPlayer = true;
+    public bool lookAtPlayer = false;
+    public float rotationSpeed = 5.0f;
+    public Transform playerTransform;
 
     private Vector3 lastPosition;
+    private Vector3 _cameraOffset;
 
     public static PlayerMovement instance;
 
@@ -26,6 +31,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //if(rotateAroundPlayer)
+        //{
+        //    Quaternion camTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
+
+        //    _cameraOffset = camTurnAngle * _cameraOffset;
+        //}
+
+        //if (lookAtPlayer || rotateAroundPlayer)
+        //    transform.LookAt(playerTransform);
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
