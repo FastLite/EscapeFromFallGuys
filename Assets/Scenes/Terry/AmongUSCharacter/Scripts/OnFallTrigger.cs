@@ -9,8 +9,22 @@ public class OnFallTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerMovement.instance.animator.SetTrigger("trip");
-            TellScriptToDropTablet.instance.DropTheTaptop();
+            TellScriptToDropTablet.instance.DropTheTablet();
+            AudioManager.Instance.StopAudio("Running");
+            GameManager.Instance.tabletNumber--;
+            GameManager.Instance.TakeDamage();
+            if (GameManager.Instance.tabletNumber == 0)
+            {
+                GameManager.Instance.GameOver();
+            }
+            PlayerMovement.instance.canMove = false;
+            Invoke("WaitForAnimationToEnd", 3.5f);
             //Destroy(gameObject);
         }
+    }
+
+    public void WaitForAnimationToEnd()
+    {
+        PlayerMovement.instance.canMove = true;
     }
 }

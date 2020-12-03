@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float playerSpeed = 2.0f;
     private float jumpHeight = 0.4f;
     private float gravityValue = -9.81f;
+    public bool canMove = true;
 
     private Vector3 lastPosition;
 
@@ -18,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         instance = this;
+        //controller.detectCollisions = false;
     }
 
     void Update()
@@ -29,18 +32,30 @@ public class PlayerMovement : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        if (move != Vector3.zero)
+        if (canMove == true)
         {
-            gameObject.transform.forward = move;
-        }
+            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            controller.Move(move * Time.deltaTime * playerSpeed);
 
-        if (Input.GetKey(KeyCode.Space) && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-            animator.SetTrigger("jump");
+            if ((Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) && canMove == true)
+                AudioManager.Instance.PlayAudio("Running");
+
+            if ((!Input.GetButton("Horizontal") && !Input.GetButton("Vertical") && AudioManager.Instance.sounds[3].audioSource.isPlaying)
+                || canMove == false)
+                AudioManager.Instance.StopAudio("Running");
+
+            if (move != Vector3.zero)
+            {
+                gameObject.transform.forward = move;
+            }
+
+            if (Input.GetKey(KeyCode.Space) && groundedPlayer)
+            {
+                playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+                animator.SetTrigger("jump");
+                AudioManager.Instance.StopAudio("Running");
+                AudioManager.Instance.PlayAudio("Jump");
+            }                
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
@@ -53,6 +68,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        //GameObject.Find("other_object_name").GetComponent(B).enabled = false; (to disable player movement)
+        
     }
 }

@@ -12,17 +12,10 @@ public class DropTabletAndAddForce : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0, 0, 0);
         //var postPos = transform.parent.position;
         //postPos.y += 1;
+        transform.parent = null;
         //transform.SetParent(null);
         //transform.position = postPos;
-        transform.parent = null;
-        //rb.AddForce(transform.up * 40);
-        Invoke("TurnOnCollider", 0f);
+        //rb.AddForce(transform.forward * 100);
+        //transform.GetComponent<BoxCollider>().enabled = true;
     }
-
-    public void TurnOnCollider()
-    {
-        transform.GetComponent<BoxCollider>().enabled = true;
-    }
-
-    
 }
