@@ -551,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44618885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7, y: 1.3367199, z: 48.54065}
+  m_LocalPosition: {x: 11.3, y: 1.3367199, z: 43.050648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1094107332}
@@ -1271,7 +1271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 126385553}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: TabletHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,8 +1314,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 91b7a6f28d467e74888b58852e9abca3,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1979634776202381948, guid: 46011e72c6c1d984e97e838a2a5a9f71,
         type: 3}
       propertyPath: m_Size.y
@@ -4751,7 +4750,7 @@ Transform:
   m_GameObject: {fileID: 426285726}
   m_LocalRotation: {x: 0.118321896, y: 0.000000027163372, z: -0.0000000032367584,
     w: 0.99297535}
-  m_LocalPosition: {x: 5.7, y: 1.3367199, z: 48.54065}
+  m_LocalPosition: {x: 11.3, y: 1.3367199, z: 43.050648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5763,7 +5762,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520828962}
-  m_LocalRotation: {x: 0.12120378, y: 0.000000012215378, z: 0.0000000033027632, w: 0.9926277}
+  m_LocalRotation: {x: 0.12120378, y: 0.00000001221538, z: 0.0000000033027596, w: 0.9926277}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6136,6 +6135,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595182551}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &595394078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 595394079}
+  m_Layer: 11
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &595394079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595394078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0188, y: 0.0874, z: 0.0035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1116525503}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &600088071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11852,7 +11881,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094107330}
-  m_LocalRotation: {x: 0.13923912, y: 0.000000019961583, z: -0.0000000091622, w: 0.9902589}
+  m_LocalRotation: {x: 0.13923912, y: 0.00000001996158, z: -0.000000009162197, w: 0.9902589}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12208,7 +12237,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96b8b4791a7237841b05943c76655093,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7
+      value: 11.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96b8b4791a7237841b05943c76655093,
         type: 3}
@@ -12218,7 +12247,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96b8b4791a7237841b05943c76655093,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.2
+      value: 47.71
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96b8b4791a7237841b05943c76655093,
         type: 3}
@@ -12992,12 +13021,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5d646598e79cd4baeb6a46a89ede4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabletHolder: {fileID: 126385553}
+  tabletHolder: {fileID: 595394079}
   tabletPrefabs:
-  - {fileID: 5841743397298284258, guid: 4d347db34f9b56e4384fce7e660b59e6, type: 3}
-  - {fileID: 1285762101371407719, guid: 10fa1ea796ba0c946b75c1e264e7bd70, type: 3}
-  - {fileID: 1881946824786511132, guid: eece55639c8293e44b8ebc434e3b6d1f, type: 3}
-  - {fileID: 7344215020704275931, guid: c5a239c0d4f074c4ba400c0e4abd967e, type: 3}
+  - {fileID: 1104412221510904133, guid: 46343ea930942b14e94900f0b1e04081, type: 3}
+  - {fileID: 1104412221510904133, guid: 46343ea930942b14e94900f0b1e04081, type: 3}
+  - {fileID: 1104412221510904133, guid: 46343ea930942b14e94900f0b1e04081, type: 3}
+  - {fileID: 1104412221510904133, guid: 46343ea930942b14e94900f0b1e04081, type: 3}
 --- !u!1 &1128608042
 GameObject:
   m_ObjectHideFlags: 0
@@ -14468,6 +14497,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table_Intact_FBX 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1985483356663969449, guid: 46343ea930942b14e94900f0b1e04081,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 91b7a6f28d467e74888b58852e9abca3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46343ea930942b14e94900f0b1e04081, type: 3}
 --- !u!4 &1262640219 stripped
@@ -15184,8 +15219,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 91b7a6f28d467e74888b58852e9abca3,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1979634776202381948, guid: 46011e72c6c1d984e97e838a2a5a9f71,
         type: 3}
       propertyPath: m_Size.y
@@ -17835,8 +17869,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 91b7a6f28d467e74888b58852e9abca3,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1979634776202381948, guid: 46011e72c6c1d984e97e838a2a5a9f71,
         type: 3}
       propertyPath: m_Size.y
