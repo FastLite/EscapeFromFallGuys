@@ -13,13 +13,10 @@ public class DropTabletAndAddForce : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0, 0, 0);
         //var postPos = transform.parent.position;
         //postPos.y += 1;
-        Debug.Break();
         transform.SetParent(null);
 
         rb.velocity = Vector3.zero;
         rb.isKinematic = false;
-
-        Debug.Break();
 
         //transform.SetParent(null);
         //transform.position = postPos;

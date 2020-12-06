@@ -8,22 +8,36 @@ public class GameManager : Singleton<GameManager>
     public int tabletNumber;
     public bool hasTablet;
     public int completedLevels;
+    public bool isPaused = false;
 
     public Slider tabletHealthBar;
 
     public GameObject loseScreen;
     public GameObject pauseScreen;
     public GameObject winScreen;
+    public GameObject hud;
     private void Start()
     {
         hasTablet = false;
         tabletNumber = 4;
         completedLevels = 0;
+        tabletHealthBar.value = 100;
     }
-    
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            if (!isPaused)
+                PauseGame();
+            else if (isPaused)
+                ResumeGame();
+        }
+    }
+
     public void TakeDamage()
     {
-        //tabletHealthBar.value -= 25;
+        tabletHealthBar.value -= 25;
     }
 
     public void GameOver()
@@ -58,18 +72,16 @@ public class GameManager : Singleton<GameManager>
     // Pauses the game
     public void PauseGame()
     {
-        Time.timeScale = 0;
-        pauseScreen.SetActive(true);
         AudioManager.Instance.PlayAudio("ButtonPress");
-
+        Time.timeScale = 0;
+        pauseScreen.SetActive(true);     
     }
 
     // Resumes gameplay
     public void ResumeGame()
     {
-        Time.timeScale = 1;
-        pauseScreen.SetActive(false);
         AudioManager.Instance.PlayAudio("ButtonPress");
-
+        Time.timeScale = 1;
+        pauseScreen.SetActive(false);    
     }
 }
