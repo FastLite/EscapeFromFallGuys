@@ -3452,57 +3452,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307965471}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &310892141
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 310892143}
-  - component: {fileID: 310892142}
-  m_Layer: 0
-  m_Name: '[GAMEMANAGER]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &310892142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310892141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b200859648aeb41bf23d51abfd8914, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  persistOnSceneLoad: 1
-  tabletNumber: 4
-  hasTablet: 0
-  completedLevels: 0
-  tabletHealthBar: {fileID: 1335832644}
-  loseScreen: {fileID: 0}
-  pauseScreen: {fileID: 0}
-  winScreen: {fileID: 0}
---- !u!4 &310892143
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310892141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.9699955, y: -7.1629944, z: 9.644348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &316311264
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,8 +4818,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426285726}
-  m_LocalRotation: {x: 0.118321896, y: -0.000000015892109, z: 0.0000000018936872,
-    w: 0.99297535}
+  m_LocalRotation: {x: 0.118321896, y: 0.00000001589211, z: -0.0000000018936874, w: 0.99297535}
   m_LocalPosition: {x: 11.3, y: 1.3367199, z: 43.050648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5206,129 +5154,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438557309}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &447638185
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 447638187}
-  - component: {fileID: 447638186}
-  m_Layer: 0
-  m_Name: '[AUDIOMANAGER]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &447638186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447638185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e561b5299ceb8349bff25fa826434bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  persistOnSceneLoad: 1
-  sounds:
-  - name: ButtonPress
-    audioClip: {fileID: 8300000, guid: fa959a240b3e7a34db2ca03fc4bc8d38, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: Defeat
-    audioClip: {fileID: 8300000, guid: cdb5c8d3ed6f9ca48ab6384cf9bac24d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: Jump
-    audioClip: {fileID: 8300000, guid: 56ea966277d9e88479ed08ccba3fa2f0, type: 3}
-    volume: 0
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: Running
-    audioClip: {fileID: 8300000, guid: dec5d62fce57d204b9c7b7d6c4cf6104, type: 3}
-    volume: 0.463
-    pitch: 0
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: Soft Jump
-    audioClip: {fileID: 8300000, guid: fbb08553cf330844b82c39f83cc70f3e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: Soft Landing
-    audioClip: {fileID: 8300000, guid: 9a38538169410564fbddce2f436a1437, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: Victory
-    audioClip: {fileID: 8300000, guid: 293f646f42224f04395c4762198a090b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: BGM
-    audioClip: {fileID: 8300000, guid: ca194030f9e074d48add7b1fe744b652, type: 3}
-    volume: 0.207
-    pitch: 1
-    loop: 1
-    audioSource: {fileID: 0}
-  - name: FallCrash
-    audioClip: {fileID: 8300000, guid: 10b0c3cc30252b94b8843f5fd25ebcfc, type: 3}
-    volume: 0.207
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: RockHit
-    audioClip: {fileID: 8300000, guid: 77f4bea67b76d7643a788f0181c182d2, type: 3}
-    volume: 0.207
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: Trip
-    audioClip: {fileID: 8300000, guid: f3ca522a9c1a9c14fbb09ff78bd4dbae, type: 3}
-    volume: 0.207
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: GetBackUp
-    audioClip: {fileID: 8300000, guid: 8fb5fea56a0d8d4469905c6e2f5c6287, type: 3}
-    volume: 0.207
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
-  - name: CollideCylinder
-    audioClip: {fileID: 8300000, guid: 351efb72b617f564c9917b23a41c063e, type: 3}
-    volume: 0.207
-    pitch: 1
-    loop: 0
-    audioSource: {fileID: 0}
---- !u!4 &447638187
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447638185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.035892487, y: -7.0526123, z: 30.025589}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480823147
 GameObject:
   m_ObjectHideFlags: 3
@@ -5883,7 +5708,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520828962}
-  m_LocalRotation: {x: 0.12120378, y: -0.000000013403908, z: 0.000000006430977, w: 0.9926277}
+  m_LocalRotation: {x: 0.12120378, y: 0.000000012215385, z: 0.0000000033027596, w: 0.9926277}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5990,7 +5815,7 @@ RectTransform:
   - {fileID: 1335832643}
   - {fileID: 48451701}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8490,7 +8315,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792171159}
-  m_LocalRotation: {x: 0.10317612, y: 0.0000000175985, z: -0.0000000014175061, w: 0.9946632}
+  m_LocalRotation: {x: 0.10317612, y: -0.00000001768406, z: 0.0000000022423434, w: 0.9946632}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14863,7 +14688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1262640218
 PrefabInstance:
@@ -22306,7 +22131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.67}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.25, y: 28.13}
+  m_AnchoredPosition: {x: -3.2, y: 28.13}
   m_SizeDelta: {x: 100.32663, y: 100.32663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052292320

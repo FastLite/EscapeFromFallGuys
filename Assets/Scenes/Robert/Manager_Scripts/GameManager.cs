@@ -16,8 +16,10 @@ public class GameManager : Singleton<GameManager>
     public GameObject pauseScreen;
     public GameObject winScreen;
     public GameObject hud;
+    public GameObject rulesScreen;
     private void Start()
     {
+        Time.timeScale = 1;
         hasTablet = false;
         tabletNumber = 4;
         completedLevels = 0;
@@ -83,5 +85,21 @@ public class GameManager : Singleton<GameManager>
         AudioManager.Instance.PlayAudio("ButtonPress");
         Time.timeScale = 1;
         pauseScreen.SetActive(false);    
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void PlayButtonPress()
+    {
+        AudioManager.Instance.PlayAudio("ButtonPress");
+    }
+
+    public void PlayLevelMusic()
+    {
+        AudioManager.Instance.StopAudio("MenuMusic");
+        AudioManager.Instance.PlayAudio("BGM");
     }
 }
