@@ -24,6 +24,11 @@ public class GameManager : Singleton<GameManager>
         tabletNumber = 4;
         completedLevels = 0;
         tabletHealthBar.value = 100;
+        DontDestroyOnLoad(hud);
+        DontDestroyOnLoad(loseScreen);
+        DontDestroyOnLoad(pauseScreen);
+        DontDestroyOnLoad(winScreen);
+        DontDestroyOnLoad(rulesScreen);
     }
 
     private void Update()
