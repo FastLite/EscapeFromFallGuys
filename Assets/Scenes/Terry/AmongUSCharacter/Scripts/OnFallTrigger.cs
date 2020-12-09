@@ -6,8 +6,9 @@ public class OnFallTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && GameManager.Instance.hasTablet == true)
         {
+            GameManager.Instance.hasTablet = false;
             PlayerMovement.instance.animator.SetTrigger("trip");
             TellScriptToDropTablet.instance.DropTheTablet();
             AudioManager.Instance.StopAudio("Running");

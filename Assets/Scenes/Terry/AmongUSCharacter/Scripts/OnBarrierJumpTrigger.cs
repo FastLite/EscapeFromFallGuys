@@ -6,8 +6,9 @@ public class OnBarrierJumpTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && GameManager.Instance.hasTablet == true)
         {
+            GameManager.Instance.hasTablet = false;
             PlayerMovement.instance.animator.SetTrigger("trip");
             TellScriptToDropTablet.instance.DropTheTablet();
             AudioManager.Instance.StopAudio("Running");
@@ -22,7 +23,6 @@ public class OnBarrierJumpTrigger : MonoBehaviour
             transform.GetComponent<CapsuleCollider>().enabled = false;
             PlayerMovement.instance.canMove = false;
             Invoke("WaitForAnimationToEnd", 3.5f);
-            //Destroy(gameObject);
         }
     }
 

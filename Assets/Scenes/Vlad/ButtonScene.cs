@@ -7,7 +7,7 @@ public class ButtonScene : MonoBehaviour
     public void LoadScene(int par)
     {
         Debug.Log("2");
-        SceneManager_vlad.instance.StartNextLevel(par);
+        SceneManager_vlad.Instance.StartNextLevel(par);
     }
     
 }

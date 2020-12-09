@@ -12,6 +12,7 @@ public class GrabTablet : MonoBehaviour
             if(Input.GetKey(KeyCode.E))
             {
                 TellScriptToDropTablet.instance.PutTabletInHand();
+                GameManager.Instance.hasTablet = true;
                 Destroy(transform.parent.gameObject);
             }     
         }

@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
 {
     public int tabletNumber;
     public bool isPaused = false;
+    public bool hasTablet = true;
 
     public Slider tabletHealthBar;
 
@@ -24,14 +25,11 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
         tabletNumber = 4;
         tabletHealthBar.value = 100;
-        DontDestroyOnLoad(hud);
-        DontDestroyOnLoad(loseScreen);
-        DontDestroyOnLoad(winScreen);
-        DontDestroyOnLoad(pauseScreen);
-        DontDestroyOnLoad(rules);
-        DontDestroyOnLoad(credits);
-        DontDestroyOnLoad(mainScreen);
-        DontDestroyOnLoad(mainScreenBackground);
+
+        //foreach(Transform child in transform)
+        //{
+        //    DontDestroyOnLoad(child);
+        //}
     }
 
     private void Update()

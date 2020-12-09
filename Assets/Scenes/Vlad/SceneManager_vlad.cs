@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 public class SceneManager_vlad : Singleton<SceneManager_vlad>
 {
     public int currentScene = 0;
-    public static SceneManager_vlad instance;
 
     public void StartNextLevel(int nextScene)
     {
         
        // UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(currentScene);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(nextScene);
 
         currentScene = nextScene;
         if (currentScene != 0)
@@ -34,5 +33,14 @@ public class SceneManager_vlad : Singleton<SceneManager_vlad>
         StartNextLevel(currentScene);
         Time.timeScale = 1;
         GameManager.Instance.PlayLevelMusic();
+        GameManager.Instance.RestartGame();
+    }
+
+    public void BackToMainMenu()
+    {
+        Destroy(AudioManager.Instance.gameObject);
+        Destroy(GameManager.Instance.gameObject);
+        Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
 }

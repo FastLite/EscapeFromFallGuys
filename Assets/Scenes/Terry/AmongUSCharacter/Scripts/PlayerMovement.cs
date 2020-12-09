@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public bool rotateAroundPlayer = true;
     public bool lookAtPlayer = false;
     public float rotationSpeed = 5.0f;
+    public float yFallLimit;
     public Transform playerTransform;
 
     private Vector3 lastPosition;
-    private Vector3 _cameraOffset;
+    private Vector3 positionBeforeJump;
 
     public static PlayerMovement instance;
 
@@ -26,21 +27,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 1;
         instance = this;
-        //controller.detectCollisions = false;
     }
 
     void Update()
     {
-        //if(rotateAroundPlayer)
-        //{
-        //    Quaternion camTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
-
-        //    _cameraOffset = camTurnAngle * _cameraOffset;
-        //}
-
-        //if (lookAtPlayer || rotateAroundPlayer)
-        //    transform.LookAt(playerTransform);
-
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -50,7 +40,15 @@ public class PlayerMovement : MonoBehaviour
         if (canMove == true)
         {
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            move = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * move;
             controller.Move(move * Time.deltaTime * playerSpeed);
+
+            if (transform.position.y < yFallLimit && !groundedPlayer)
+            {
+                transform.position = positionBeforeJump;
+                GameManager.Instance.tabletNumber--;
+                GameManager.Instance.TakeDamage();
+            }
 
             if ((Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) && canMove == true)
                 AudioManager.Instance.PlayAudio("Running");
@@ -67,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) && groundedPlayer)
             {
                 playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+                positionBeforeJump = transform.position;
                 animator.SetTrigger("jump");
                 AudioManager.Instance.StopAudio("Running");
                 AudioManager.Instance.PlayAudio("Jump");
