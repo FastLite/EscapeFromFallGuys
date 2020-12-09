@@ -8,7 +8,10 @@ public class OnFinishLineTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-
+            Time.timeScale = 0.1f;
+            GameManager.Instance.winScreen.SetActive(true);
+            AudioManager.Instance.StopAudio("BGM");
+            AudioManager.Instance.PlayAudio("Victory");
         }
     }
 }

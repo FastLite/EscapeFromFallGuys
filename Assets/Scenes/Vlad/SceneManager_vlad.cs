@@ -4,26 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager_vlad : MonoBehaviour
+public class SceneManager_vlad : Singleton<SceneManager_vlad>
 {
     public int currentScene = 0;
     public static SceneManager_vlad instance;
-
-    private void Awake()
-    {
-        
-        DontDestroyOnLoad(this);
-        if (instance== null)
-        {
-            instance = this;
-        }
-        else 
-        {
-            Destroy(gameObject);
-        }
-        
-
-    }
 
     public void StartNextLevel(int nextScene)
     {
@@ -36,6 +20,8 @@ public class SceneManager_vlad : MonoBehaviour
         {
             PlayerPrefs.SetInt("LastScenePlayed", currentScene);
         }
+        Time.timeScale = 1;
+        AudioManager.Instance.StopAudio("BGM");
     }
 
     public void ContinueGame()
@@ -46,8 +32,7 @@ public class SceneManager_vlad : MonoBehaviour
     public void Restart()
     {
         StartNextLevel(currentScene);
+        Time.timeScale = 1;
+        GameManager.Instance.PlayLevelMusic();
     }
-    
-    
-
 }

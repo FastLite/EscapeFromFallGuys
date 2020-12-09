@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager>
 {
     public int tabletNumber;
-    public bool hasTablet;
-    public int completedLevels;
     public bool isPaused = false;
 
     public Slider tabletHealthBar;
@@ -16,29 +14,40 @@ public class GameManager : Singleton<GameManager>
     public GameObject pauseScreen;
     public GameObject winScreen;
     public GameObject hud;
-    public GameObject rulesScreen;
+    public GameObject rules;
+    public GameObject credits;
+    public GameObject mainScreen;
+    public GameObject mainScreenBackground;
+
     private void Start()
     {
         Time.timeScale = 1;
-        hasTablet = false;
         tabletNumber = 4;
-        completedLevels = 0;
         tabletHealthBar.value = 100;
         DontDestroyOnLoad(hud);
         DontDestroyOnLoad(loseScreen);
-        DontDestroyOnLoad(pauseScreen);
         DontDestroyOnLoad(winScreen);
-        DontDestroyOnLoad(rulesScreen);
+        DontDestroyOnLoad(pauseScreen);
+        DontDestroyOnLoad(rules);
+        DontDestroyOnLoad(credits);
+        DontDestroyOnLoad(mainScreen);
+        DontDestroyOnLoad(mainScreenBackground);
     }
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)
+            {
+                isPaused = true;
                 PauseGame();
-            else if (isPaused)
+            }     
+            else
+            {
+                isPaused = false;
                 ResumeGame();
+            }              
         }
     }
 
@@ -54,16 +63,6 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 0.15f;
         loseScreen.SetActive(true);
         Debug.Log("<color=cyan>Game Over!</color>");
-
-
-        // Activates win screen after all levels are complete
-        //if(hasTablet && completedLevels == totalLevels)
-        //{
-        //    AudioManager.Instance.PlayAudio("Victory");
-        //    Time.timeScale = 0;
-        //    winScreen.SetActive(true);
-        //    Debug.Log("<color=blue>Congratulations, you win!</color>");
-        //}
     }
 
     // Restarts the game
@@ -71,8 +70,8 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 1;
         loseScreen.SetActive(false);
-        completedLevels = 0;
-        SceneManager.Instance.GameReset();
+        tabletNumber = 4;
+        tabletHealthBar.value = 100;
         Debug.Log("<color=green>Game has been reset</color>");
     }
 
@@ -80,16 +79,16 @@ public class GameManager : Singleton<GameManager>
     public void PauseGame()
     {
         AudioManager.Instance.PlayAudio("ButtonPress");
+        pauseScreen.SetActive(true);
         Time.timeScale = 0;
-        pauseScreen.SetActive(true);     
     }
 
     // Resumes gameplay
     public void ResumeGame()
     {
         AudioManager.Instance.PlayAudio("ButtonPress");
+        pauseScreen.SetActive(false);
         Time.timeScale = 1;
-        pauseScreen.SetActive(false);    
     }
 
     public void ExitGame()

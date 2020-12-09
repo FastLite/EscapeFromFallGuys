@@ -25,7 +25,8 @@ public class AudioManager : Singleton<AudioManager>
         sounds[3].audioSource.loop = true;
         sounds[3].audioSource.volume = 0.35f;
         sounds[2].audioSource.volume = 1;
-        sounds[13].audioSource.volume = 0.2f;
+        sounds[13].audioSource.volume = 0.1f;
+        sounds[13].audioSource.loop = true;
         PlayAudio("MenuMusic");
     }
 
