@@ -17,12 +17,6 @@ public class DropTabletAndAddForce : MonoBehaviour
         if(GameManager.Instance.tabletNumber == 4)
         {
             GameManager.Instance.helpMessageTextField.gameObject.SetActive(true);
-            Invoke("WaitForSomeTime", 4.5f);
         }   
-    }
-
-    public void WaitForSomeTime()
-    {
-        GameManager.Instance.helpMessageTextField.gameObject.SetActive(false);
     }
 }
