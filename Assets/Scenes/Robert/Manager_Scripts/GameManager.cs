@@ -20,6 +20,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject mainScreen;
     public GameObject mainScreenBackground;
 
+    public Text helpMessageTextField;
+
     private void Start()
     {
         Time.timeScale = 1;

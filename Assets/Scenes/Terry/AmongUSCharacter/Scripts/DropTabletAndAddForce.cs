@@ -13,5 +13,16 @@ public class DropTabletAndAddForce : MonoBehaviour
         rb.isKinematic = false;
 
         rb.AddForce(transform.up * 150);
+
+        if(GameManager.Instance.tabletNumber == 4)
+        {
+            GameManager.Instance.helpMessageTextField.gameObject.SetActive(true);
+            Invoke("WaitForSomeTime", 4.5f);
+        }   
+    }
+
+    public void WaitForSomeTime()
+    {
+        GameManager.Instance.helpMessageTextField.gameObject.SetActive(false);
     }
 }
